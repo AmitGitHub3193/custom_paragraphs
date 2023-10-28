@@ -1,0 +1,5 @@
+custom-paragraphs:
+  version: 1.x
+  css:
+    theme:
+      css/custom-paragraphs.css: {}

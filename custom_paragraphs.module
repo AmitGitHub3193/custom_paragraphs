@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file 
+ * This file demonstrates how to use hook functions.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function custom_paragraphs_theme() {
+  $theme['paragraph__card_info'] = [
+    'base hook' => 'paragraph',
+  ];
+
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function custom_paragraphs_theme_suggestions_paragraph(array $variables) {
+  $suggestions = array();
+  $paragraph = $variables['elements']['#paragraph'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  if ($paragraph->bundle() == 'card_info') {
+    $suggestions[] = 'paragraph__card_info';
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for paragraph templates.
+ */
+function custom_paragraphs_preprocess_paragraph(&$variables) {
+  // Replace 'my_paragraph_type' with the machine name of your paragraph type.
+  if ($variables['paragraph']->getType() === 'card_info') {
+    // Attach the library to the paragraph.
+    $variables['#attached']['library'][] = 'custom_paragraphs/custom-paragraphs';
+  }
+}

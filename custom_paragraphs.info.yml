@@ -1,0 +1,8 @@
+name: 'Custom Paragraphs'
+type: module
+core_version_requirement: ^8 || ^9 || ^10
+description: 'Allow to create custom paragraph type and attach to node.'
+package: 'Custom'
+dependencies:
+  - drupal:paragraphs
+  - drupal:config

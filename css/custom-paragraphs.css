@@ -1,0 +1,34 @@
+.field--name-field-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.field--name-field-cards > .field__item {
+  flex: 30%;
+  padding: 20px 10px;
+  margin: 5px;
+  background-color: #cccccc;
+  text-align: center;
+}
+.field--name-field-cards > .field__item .field--name-field-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+.field--name-field-cards > .field__item .field--name-field-cta a {
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+}
+@media screen and (max-width: 800px) {
+  .field--name-field-cards > .field__item {
+    flex: 40%;
+    max-width: 40%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .field--name-field-cards > .field__item {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

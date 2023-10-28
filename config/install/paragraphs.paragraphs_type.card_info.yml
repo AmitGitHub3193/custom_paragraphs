@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - custom_paragraphs
+id: card_info
+label: 'Card Info'
+icon_uuid: null
+icon_default: null
+description: 'Use this paragraph type to create card info block layout.'
+behavior_plugins: {  }
